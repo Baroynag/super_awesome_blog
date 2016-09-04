@@ -1,17 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="blog-header">
+  <h1 class="blog-title">
+    <%= @article.title %>
+  </h1>
+</div>
 
-<p>
-<h1>
-  <%= @article.title %>
-<h1>
-</p>
-
-<%= image_tag(@article.image.url) %>
-
-<p>
-  <%= @article.text %>
-</p>
-
+<div class="row">
+  <div class="col-sm-8 blog-main">
+    <div class="blog-post">
+      <p class="blog-post-meta"> <%= @article.created_at %> </p>
+      <%= image_tag(@article.image.url) %>
+      <p> <%= raw @article.text %> </p>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
